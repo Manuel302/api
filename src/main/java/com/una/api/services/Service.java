@@ -21,7 +21,7 @@ public class Service {
         try {
             //Class.forName("oracle.jdbc.driver.OracleDriver");
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //String url = String.format("jdbc:oracle:thin:@%s:XE", host);
+            //String url = String.format("jdbc:oracle:thin:@%s/%s:XE", Host, DB);
             String url = String.format("jdbc:mysql://%s/%s", Host, DB);
             connection = DriverManager.getConnection(url, User, Password);
         }
