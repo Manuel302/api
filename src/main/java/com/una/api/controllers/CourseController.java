@@ -21,7 +21,7 @@ public class CourseController {
 
     @GET
     @Path("/{id}")
-    public Course getCourse(@PathParam("id") Long id){
+    public Course getCourse(@PathParam("id") int id){
         return courseService.get(id);
     }
 }

@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface IService<T> {
     List<T> getAll();
-    T get(Long id);
+    T get(int id);
 }

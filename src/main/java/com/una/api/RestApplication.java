@@ -1,6 +1,6 @@
 package com.una.api;
 
-import com.una.api.controllers.CourseController;
+import com.una.api.controllers.*;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -13,7 +13,11 @@ public class RestApplication extends Application {
     public Set<Class<?>> getClasses() {
         HashSet<Class<?>> h = new HashSet<>();
         h.add(HelloResource.class);
+        h.add(CareerController.class);
         h.add(CourseController.class);
+        h.add(CycleController.class);
+        h.add(ProfessorController.class);
+        h.add(StudentController.class);
         return h;
     }
 }

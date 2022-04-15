@@ -21,14 +21,7 @@ public class CourseService extends Service implements IService<Course> {
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery("select * from curso");
             while(rs.next()) {
-                course = new Course(
-                        rs.getString("nombrecurso"),
-                        rs.getInt("creditos"),
-                        rs.getInt("horas_semanales"),
-                        rs.getString("idcurso"),
-                        rs.getInt("carrera_idcarrera"),
-                        rs.getInt("anio_deseado"),
-                        rs.getString("ciclo_deseado"));
+                course = build(rs);
                 collection.add(course);
             }
 
@@ -41,7 +34,7 @@ public class CourseService extends Service implements IService<Course> {
     }
 
     @Override
-    public Course get(Long id) {
+    public Course get(int id) {
         connect();
 
         Course course = null;
@@ -50,14 +43,7 @@ public class CourseService extends Service implements IService<Course> {
             stmt.setString(1, String.valueOf(id));
             ResultSet rs = stmt.executeQuery();
             while(rs.next()) {
-                course = new Course(
-                        rs.getString("nombrecurso"),
-                        rs.getInt("creditos"),
-                        rs.getInt("horas_semanales"),
-                        rs.getString("idcurso"),
-                        rs.getInt("careaa_idcarrera"),
-                        rs.getInt("anio_deseado"),
-                        rs.getString("ciclo_deseado"));
+                course = build(rs);
             }
 
         } catch (SQLException e) {
@@ -66,5 +52,16 @@ public class CourseService extends Service implements IService<Course> {
 
         disconnect();
         return course;
+    }
+
+    private Course build(ResultSet rs) throws SQLException {
+        return new Course(
+                rs.getString("nombrecurso"),
+                rs.getInt("creditos"),
+                rs.getInt("horas_semanales"),
+                rs.getString("idcurso"),
+                rs.getInt("carrera_idcarrera"),
+                rs.getInt("anio_deseado"),
+                rs.getString("ciclo_deseado"));
     }
 }
