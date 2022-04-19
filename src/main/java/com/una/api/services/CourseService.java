@@ -40,7 +40,7 @@ public class CourseService extends Service implements IService<Course> {
         Course course = null;
         try {
             PreparedStatement stmt = connection.prepareStatement("select * from curso where idcurso = ?");
-            stmt.setString(1, String.valueOf(id));
+            stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             while(rs.next()) {
                 course = build(rs);

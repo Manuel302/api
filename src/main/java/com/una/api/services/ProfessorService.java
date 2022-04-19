@@ -40,7 +40,7 @@ public class ProfessorService extends Service implements IService<Professor> {
         Professor professor = null;
         try {
             PreparedStatement stmt = connection.prepareStatement("select * from profesores where idprofesores = ?");
-            stmt.setString(1, String.valueOf(id));
+            stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             while(rs.next()) {
                 professor = build(rs);

@@ -40,7 +40,7 @@ public class CycleService extends Service implements IService<Cycle> {
         Cycle cycle = null;
         try {
             PreparedStatement stmt = connection.prepareStatement("select * from ciclo where idciclo = ?");
-            stmt.setString(1, String.valueOf(id));
+            stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             while(rs.next()) {
                 cycle = build(rs);

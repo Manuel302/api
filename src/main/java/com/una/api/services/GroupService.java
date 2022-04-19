@@ -40,7 +40,7 @@ public class GroupService extends Service implements IService<Group> {
         Group group = null;
         try {
             PreparedStatement stmt = connection.prepareStatement("select * from grupos where idgrupos = ?");
-            stmt.setString(1, String.valueOf(id));
+            stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             while(rs.next()) {
                 group = build(rs);
@@ -89,8 +89,7 @@ public class GroupService extends Service implements IService<Group> {
             stmt.setInt(3, obj.getCycle());
             stmt.setInt(4, obj.getCourse());
             stmt.setInt(5, obj.getId());
-            int rows = stmt.executeUpdate();
-
+            stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

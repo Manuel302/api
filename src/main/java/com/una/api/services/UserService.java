@@ -40,7 +40,7 @@ public class UserService extends Service implements IService<User> {
         User user = null;
         try {
             PreparedStatement stmt = connection.prepareStatement("select * from usuarios where idusuarios = ?");
-            stmt.setString(1, String.valueOf(id));
+            stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             while(rs.next()) {
                 user = build(rs);

@@ -40,7 +40,7 @@ public class StudentService extends Service implements IService<Student> {
         Student student = null;
         try {
             PreparedStatement stmt = connection.prepareStatement("select * from estudiantes where idestudiante = ?");
-            stmt.setString(1, String.valueOf(id));
+            stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             while(rs.next()) {
                 student = build(rs);
