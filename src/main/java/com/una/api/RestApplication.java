@@ -16,6 +16,7 @@ public class RestApplication extends Application {
         h.add(CareerController.class);
         h.add(CourseController.class);
         h.add(CycleController.class);
+        h.add(GroupController.class);
         h.add(ProfessorController.class);
         h.add(StudentController.class);
         return h;

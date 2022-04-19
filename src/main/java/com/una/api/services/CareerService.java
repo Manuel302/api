@@ -54,6 +54,15 @@ public class CareerService extends Service implements IService<Career> {
         return career;
     }
 
+    @Override
+    public void post(Career obj) {
+
+    }
+
+    @Override
+    public void put(Career obj) {
+    }
+
     private Career build(ResultSet rs) throws SQLException {
         return new Career(
                 rs.getInt("idcarrera"),

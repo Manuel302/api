@@ -54,6 +54,15 @@ public class CourseService extends Service implements IService<Course> {
         return course;
     }
 
+    @Override
+    public void post(Course obj) {
+
+    }
+
+    @Override
+    public void put(Course obj) {
+    }
+
     private Course build(ResultSet rs) throws SQLException {
         return new Course(
                 rs.getString("nombrecurso"),

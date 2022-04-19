@@ -53,7 +53,16 @@ public class StudentService extends Service implements IService<Student> {
         disconnect();
         return student;
     }
-    
+
+    @Override
+    public void post(Student obj) {
+
+    }
+
+    @Override
+    public void put(Student obj) {
+    }
+
     private Student build(ResultSet rs) throws SQLException {
         return new Student(
                 rs.getInt("idestudiante"),

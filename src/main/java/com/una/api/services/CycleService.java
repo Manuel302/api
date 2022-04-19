@@ -53,7 +53,16 @@ public class CycleService extends Service implements IService<Cycle> {
         disconnect();
         return cycle;
     }
-    
+
+    @Override
+    public void post(Cycle obj) {
+
+    }
+
+    @Override
+    public void put(Cycle obj) {
+    }
+
     private Cycle build(ResultSet rs) throws SQLException {
         return new Cycle(
                 rs.getInt("idciclo"),

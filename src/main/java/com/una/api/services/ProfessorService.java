@@ -53,7 +53,16 @@ public class ProfessorService extends Service implements IService<Professor> {
         disconnect();
         return professor;
     }
-    
+
+    @Override
+    public void post(Professor obj) {
+
+    }
+
+    @Override
+    public void put(Professor obj) {
+    }
+
     private Professor build(ResultSet rs) throws SQLException {
         return new Professor(
                 rs.getInt("idprofesores"),

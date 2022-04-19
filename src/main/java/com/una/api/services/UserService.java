@@ -53,7 +53,16 @@ public class UserService extends Service implements IService<User> {
         disconnect();
         return user;
     }
-    
+
+    @Override
+    public void post(User obj) {
+
+    }
+
+    @Override
+    public void put(User obj) {
+    }
+
     private User build(ResultSet rs) throws SQLException {
         return new User(
                 rs.getInt("idusuarios"),
