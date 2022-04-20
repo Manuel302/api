@@ -66,6 +66,7 @@ public class UserService extends Service implements IService<User> {
     private User build(ResultSet rs) throws SQLException {
         return new User(
                 rs.getInt("idusuarios"),
-                rs.getInt("tipo"));
+                rs.getInt("tipo"),
+                rs.getString("nombre_usuarion"));
     }
 }

@@ -163,7 +163,9 @@ CREATE TABLE IF NOT EXISTS `matricula`.`matriculados` (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `matricula`.`usuarios` (
                                                       `idusuarios` INT NOT NULL,
+                                                      `nombre_usuario` VARCHAR(45) NOT NULL,
                                                       `password_usuario` VARCHAR(45) NOT NULL,
+                                                      `token` VARCHAR(45),
                                                       `tipo` INT NOT NULL,
                                                       PRIMARY KEY (`idusuarios`))
     ENGINE = InnoDB
